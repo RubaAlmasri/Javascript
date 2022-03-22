@@ -10,9 +10,13 @@
  * Result:
  * [4, 10, 200]
 */
+console.log(doubleNumbers([2, 5, 100]));
 function doubleNumbers(arr){
   // your code here
-
+  for(let i=0;i<arr.length;i++){
+    arr[i]+=arr[i]
+  }
+  return arr
 }
 
 /*
@@ -27,11 +31,13 @@ function doubleNumbers(arr){
  * Result:
  * ["2", "5", "100"]
 */
-
+console.log(stringItUp([2, 5, 100]))
 function stringItUp(arr){
   // your code here
-
-
+  for(let i=0;i<arr.length;i++){
+    arr[i]=arr[i].toString()
+  }
+  return arr
 }
 
 
@@ -47,10 +53,13 @@ function stringItUp(arr){
  * Result:
  *  ["John", "Jacob", "Jingleheimer", "Schmidt"]
 */
-
+console.log(capitalizeNames(["john", "JACOB", "jinGleHeimer", "schmidt"]))
 function capitalizeNames(arr){
   // your code here
-  
+  for(let i=0; i<arr.length;i++){
+    arr[i]=arr[i].charAt(0).toUpperCase()+ arr[i].slice(1)
+  }
+  return arr
 }
 //  * Exercise 4:  
 //  * 
@@ -89,9 +98,35 @@ function capitalizeNames(arr){
 //  * "<h1>Kayne West</h1><h2>16</h2>", 
 //  * "<h1>Bob Ziroll</h1><h2>100</h2>"]
 //  */
-
+console.log(readyToPutInTheDOM([
+      {
+          name: "Angelina Jolie",
+          age: 80
+      },
+      {
+          name: "Eric Jones",
+          age: 2
+      },
+      {
+          name: "Paris Hilton",
+          age: 5
+      },
+      {
+          name: "Kayne West",
+          age: 16
+      },
+      {
+          name: "Bob Ziroll",
+         age: 100
+      }
+    ]));
 function readyToPutInTheDOM(arr){
   // your code here
+  let array=[]
+  for(let i in arr){
+    array[i]='<h1>'+arr[i].name+'</h1><h2>'+arr[i].age+'</h2>'
+  }
+  return array
 }
 
 
@@ -109,9 +144,14 @@ function readyToPutInTheDOM(arr){
 * Test Case 1: [2,4,6] 
 * Test Case 2: [2,-4,-6]
 */
-
+console.log(doubleValues([1,2,3]))
+console.log(doubleValues([1,-2,-3]))
 function doubleValues(arr){
     // your code here
+    for(let i=0; i<arr.length;i++){
+      arr[i]=arr[i]*2
+    }
+    return arr
   }
   
   /*
@@ -127,10 +167,14 @@ function doubleValues(arr){
   * Test Case 1: [0,2,6]
   * Test Case 2: [0,-2,-6]
   */
-  
+  console.log(valTimesIndex([1,2,3]))
+  console.log(valTimesIndex([1,-2,-3])) 
   function valTimesIndex(arr){
      // your code here   
-    
+     for(let i=0;i<arr.length;i++){
+       arr[i]=arr[i]*i
+     }
+    return arr
   }
   
   /*
@@ -144,10 +188,15 @@ function doubleValues(arr){
   * Result:
   * ['Elie', 'Tim', 'Matt', 'Colt']
   */
-  
+  console.log(extractKey([{name: 'Elie'}, {name: 'Tim'}, {name: 'Matt'}, {name: 'Colt'}], 'name'))
   function extractKey(arr, key){
-     // your code here 
-  }
+    // your code here 
+    let array=[]
+    for(let i=0;i<arr.length;i++){
+      array[i]=arr[i].name
+    }
+    return array
+ }
   
   /*
   * Exercise 8:
@@ -156,7 +205,12 @@ function doubleValues(arr){
   * Examples:
   * extractFullName([{first: 'Elie', last:"Schoppik"}, {first: 'Tim', last:"Garcia"}, {first: 'Matt', last:"Lane"}, {first: 'Colt', last:"Steele"}]) // ['Elie Schoppik', 'Tim Garcia', 'Matt Lane', 'Colt Steele']
   */
-  
- function extractFullName(){
+  console.log(extractFullName([{first: 'Elie', last:"Schoppik"}, {first: 'Tim', last:"Garcia"}, {first: 'Matt', last:"Lane"}, {first: 'Colt', last:"Steele"}]))
+ function extractFullName(arr){
     // your code here 
+    let array=[]
+    for(let i=0;i<arr.length;i++){
+      array[i]=arr[i].first+ ' ' +arr[i].last
+    }
+    return array
  }

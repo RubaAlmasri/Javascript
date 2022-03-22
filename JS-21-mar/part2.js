@@ -267,19 +267,19 @@ countDown(7)
 console.log(countDown(5))
 console.log(countDown(7))
 function countDown(num){
-    let i = num ;
-    // let j = 0;
+    let i = 0 ;
     let str='';
-    if(num>=0){
-        while(i>0){
-            str=toString(i)+', '
+    if(num>0){
+        while(i<=num){
+            str= num +', '
             i++
+            num--
         }
     }
     else{
         while(i>0){
-            str=i
-            i++
+            str=num+', '
+            i--
         }
     }
     return str+'done'
