@@ -10,7 +10,7 @@
  * Result:
  * [4, 10, 200]
 */
-console.log(doubleNumbers([2, 5, 100]));
+console.log(doubleNumbers([2, -5, 100]));
 function doubleNumbers(arr){
   // your code here
   for(let i=0;i<arr.length;i++){
