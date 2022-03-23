@@ -13,9 +13,10 @@ Correct the syntax error
 */
  let arr1=[ 1,7 , 9 , 45 ]
 
- let arr2=["Str" ,"alex","moh"]
+ let arr2=['Str', 'alex','moh','the','fox', 'over' ,'lazy', 'dog']
 
- let arr3=['the','fox', 'over','lazy' , 'dog' ]
+ console.log(arr1)
+ console.log(arr2)
 
 /*
 2
