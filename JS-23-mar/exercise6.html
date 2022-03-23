@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise #6 </title>
+</head>
+<body>
+    <input type="text" id="in">
+    <button id="btn" value="Add song" onclick="clickme(this.value)">Add song</button>
+    <ul id="list1" style="list-style: none;"></ul>
+    <script>
+        function clickme(val){
+            var list=document.getElementById('list1')
+            var li=document.createElement('li')
+            var input=document.getElementById('in').value
+            li.appendChild(document.createTextNode(input))
+            li.style.border='1px solid'
+            li.style.backgroundColor='#afafaf'
+            li.style.paddingLeft='0px'
+            li.style.width='500px'
+            list.appendChild(li)
+        }
+    </script>
+</body>
+</html>
