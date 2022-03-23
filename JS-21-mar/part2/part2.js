@@ -268,23 +268,23 @@ countDown(7)
 */
 console.log(countDown(5))
 console.log(countDown(7))
+console.log(countDown(-7))
 function countDown(num){
-    let i = 0 ;
+    let i = num ;
     let str='';
     if(num>0){
-        while(i<=num){
+        while(i>0){
             str= str + num +', '
+            num--
+             i--
             
-            if(num!=0){
-                num--
-                i++
-            }
         }
     }
     else{
-        while(i>0){
+        while(i<0){
             str=str + num+', '
-            i--
+            num++
+            i++
         }
     }
     return str+'done'
