@@ -9,64 +9,78 @@
 </head>
 
 <body>
-    
-        <select id="select1" onclick="click()">
-            <option value="Arial">Arial</option>
-            <option value="Times New Roman">Times New Roman</option>
-            <option value="Impact">Impact</option>
-        </select>
-        <select id="select2" onclick="click()">
-            <option value="12px">12px</option>
-            <option value="16px">16px</option>
-            <option value="20px">20px</option>
-        </select>
-        <input type="checkbox" id="in1" value="in1" onclick="click()"><label for="in1">Italic</label>
-        <input type="checkbox" id="in2" value="in2" onclick="click()"><label for="in2">Bold</label>
-        <input type="checkbox" id="in3" value="in3" onclick="click()"><label for="in3">Underline</label>
-        <br /><br />
-        <textarea id="area" cols="60" rows="10"></textarea>
-    
+
+    <select id="select1" onchange="click0()">
+        <option value="Arial" id="o1">Arial</option>
+        <option value="Times New Roman" id="o2">Times New Roman</option>
+        <option value="Impact" id="o3">Impact</option>
+    </select>
+    <select id="select2" onchange="click1()">
+        <option value="20px" id="op1">20px</option>
+        <option value="30px" id="op2">30px</option>
+        <option value="40px" id="op3">40px</option>
+    </select>
+    <input type="checkbox" id="in1" value="in1" onclick="click2()"><label for="in1">Italic</label>
+    <input type="checkbox" id="in2" value="in2" onclick="click3()"><label for="in2">Bold</label>
+    <input type="checkbox" id="in3" value="in3" onclick="click4()"><label for="in3">Underline</label>
+    <br /><br />
+    <textarea id="area" cols="60" rows="10"></textarea>
+
     <script>
         let x = document.getElementById('area')
-        x.style.fontFamily = 'Arial'
-        x.style.fontSize = '12px'
+        let s3 = document.getElementById('in1')
+        let s4 = document.getElementById('in2')
+        let s5 = document.getElementById('in3')
 
-        function click() {
-            let s1 = document.getElementById('select1').value
-            let s2 = document.getElementById('select2').value
-            let s3 = document.getElementById('in1').value
-            let s4 = document.getElementById('in2').value
-            let s5 = document.getElementById('in3').value
-            
-            if (s1 == 'Arial') {
+        function click0() {
+            if (document.getElementById('o1').selected) {
                 x.style.fontFamily = 'Arial'
             }
-            if (s1 == 'Times New Roman') {
+            else if (document.getElementById('o2').selected) {
                 x.style.fontFamily = 'Times New Roman'
             }
-            if (s1 == 'Impact') {
+            else if (document.getElementById('o3').selected) {
                 x.style.fontFamily = 'Impact'
             }
-            if (s2 == '12px') {
-                x.style.fontSize = '12px'
-            }
-            if (s2 == '16px') {
-                x.style.fontSize = '16px'
-            }
-            if (s2 == '20px') {
+        }
+        function click1() {
+            if (document.getElementById('op1').selected) {
                 x.style.fontSize = '20px'
             }
-            if (s3 == 'in1') {
+            else if (document.getElementById('op2').selected) {
+                x.style.fontSize = '30px'
+            }
+            else if (document.getElementById('op3').selected) {
+                x.style.fontSize = '40px'
+            }
+        }
+        function click2() {
+            if (s3.checked == true) {
                 x.style.fontStyle = 'italic'
             }
-            if (s4 == 'in2') {
-                x.style.fontWeight= 'bold'
+            else {
+                x.style.fontStyle = 'normal'
             }
-            if (s5 == 'in3') {
-                x.style.textDecoration = 'underline'
-            }
-            
         }
+        function click3() {
+            if (s4.checked == true) {
+                x.style.fontWeight = 'bold'
+            }
+            else {
+                x.style.fontWeight = 'normal'
+            }
+        }
+        function click4() {
+            if (s5.checked == true) {
+                x.style.textDecorationLine = 'underline'
+            }
+            else {
+                x.style.textDecorationLine = 'none'
+            }
+        }
+
+
+
     </script>
 
 </body>
