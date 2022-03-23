@@ -269,6 +269,7 @@ countDown(7)
 console.log(countDown(5))
 console.log(countDown(7))
 console.log(countDown(-7))
+console.log(countDown(0))
 function countDown(num){
     let i = num ;
     let str='';
@@ -276,8 +277,7 @@ function countDown(num){
         while(i>0){
             str= str + num +', '
             num--
-             i--
-            
+            i--
         }
     }
     else{
