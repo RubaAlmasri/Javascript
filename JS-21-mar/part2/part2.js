@@ -14,7 +14,6 @@ console.log('sub: '+ subtract(9))
 console.log('sub: '+ subtract(2))
 console.log('sub: '+ subtract(-5))
 function subtract(n){
-    
     let sub=n ;
     if(n>=0){
         let i = n-1 ;
@@ -43,6 +42,7 @@ Ex: factorial(4); => 4 * 3 * 2 * 1 => 24
 */
 console.log('factorial: '+ factorial(2))
 console.log('factorial: '+ factorial(0))
+console.log('factorial: '+ factorial(1))
 console.log('factorial: '+ factorial(-9))
 function factorial(n){
     let i=1;
@@ -97,6 +97,8 @@ Ex: sum2(3, 6); => 3 + 4 + 5 + 6 => 18
 console.log('sum: '+ sum2(4,5))
 console.log('sum: '+ sum2(6,3))
 console.log('sum: '+ sum2(9,9))
+console.log('sum: '+ sum2(-9,9))
+console.log('sum: '+ sum2(9,-9))
 function sum2(x,y){
     let i = x ;
     let sum=0;
@@ -238,7 +240,7 @@ function numberBetweenUs(a,b){
         let i = a-1;
         while(i>b){
             str=str+i
-            if(i>sb+1){
+            if(i>b+1){
                 str=str+', '
             }
             i--
@@ -271,14 +273,17 @@ function countDown(num){
     let str='';
     if(num>0){
         while(i<=num){
-            str= num +', '
-            i++
-            num--
+            str= str + num +', '
+            
+            if(num!=0){
+                num--
+                i++
+            }
         }
     }
     else{
         while(i>0){
-            str=num+', '
+            str=str + num+', '
             i--
         }
     }
