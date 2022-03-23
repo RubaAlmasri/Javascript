@@ -309,7 +309,21 @@ console.log(shorterString("air","school","car","by","github"))
 console.log(shorterString("air","tr","car","by","github"))
 console.log(shorterString("by","tr","car","air","github"))
 function shorterString(s1,s2,s3,s4,s5){
-
+    if(s1.length<=s2.length && s1.length<=s3.length && s1.length<=s4.length && s1.length<=s5.length){
+        return s1
+    }
+    else if(s2.length<=s1.length && s2.length<=s3.length && s2.length<=s4.length && s2.length<=s5.length){
+        return s2
+    }
+    else if(s3.length<=s2.length && s3.length<=s1.length && s3.length<=s4.length && s3.length<=s5.length){
+        return s3
+    }
+    else if(s4.length<=s2.length && s4.length<=s3.length && s4.length<=s1.length && s4.length<=s5.length){
+        return s4
+    }
+    else if(s5.length<=s2.length && s5.length<=s3.length && s5.length<=s4.length && s5.length<=s1.length){
+        return s5
+    }
 }
 
 
@@ -327,6 +341,23 @@ Ex: longerString("air","schoo","car","github")
 
 try all the cases (change the order of the longestString)
 */
+console.log(longerString("air","school","car","github"))
+console.log(longerString("air","schoo","car","github"))
+console.log(longerString("air","school","carssss","github"))
+function longerString(s1,s2,s3,s4){
+    if(s1.length>=s2.length && s1.length>=s3.length && s1.length>=s4.length){
+        return s1
+    }
+    else if(s2.length>=s1.length && s2.length>=s3.length && s2.length>=s4.length){
+        return s2
+    }
+    else if(s3.length>=s1.length && s3.length>=s2.length && s3.length>=s4.length){
+        return s3
+    }
+    else if(s4.length>=s1.length && s4.length>=s2.length && s4.length>=s3.length){
+        return s4
+    }
+}
 
 /*
 15
@@ -341,7 +372,17 @@ Ex: isEven(2)
 => true
 
 */
-
+console.log('is even : '+isEven(1))
+console.log(isEven(-2))
+console.log(isEven(0))
+function isEven(num){
+    if(num%2==0){
+        return 'True'
+    }
+    else{
+        return 'False'
+    }
+}
 
 /*
 16
@@ -356,7 +397,17 @@ Ex: isOdd(5)
 => true
 
 */
-
+console.log('is odd: '+isOdd(4))
+console.log(isOdd(-3))
+console.log(isOdd(0))
+function isOdd(n){
+    if(n%2!=0){
+        return 'True'
+    }
+    else{
+        return 'False'
+    }
+}
 
 /*
 17
@@ -370,7 +421,17 @@ Ex: positive(-5)
 => 5
 
 */
-
+console.log('Positive: '+positive(4))
+console.log(positive(-6))
+console.log(positive(0))
+function positive(num){
+    if(num>=0){
+        return num
+    }
+    else{
+        return num+(num*-2)
+    }
+}
 
 /*
 18
@@ -384,7 +445,10 @@ Ex: fullName("Adam","McCallen")
 Ex: fullName("Alex", "Mercer")
 => "Alex Mercer"
 */
-
+console.log(fullName("Ruba", "Almasri"))
+function fullName(fname,lname){
+    return fname + ' ' + lname
+}
 
 /*
 19
@@ -399,7 +463,12 @@ Ex: average(5,7,9,3,5)
 => 5.8
 
 */
-
+console.log('avg: '+average(1,2,3,4,5))
+console.log(average(5,7,9,3,5))
+console.log(average(5,-7,9,-3,5))
+function average(a,b,c,d,e){
+    return (a+b+c+d+e)/5
+}
 
 /*
 20
@@ -415,7 +484,11 @@ Ex: randomNumber()
 => 0.475
 
 */
-
+console.log('random: '+ randomNumber())
+console.log('random: '+ randomNumber())
+function randomNumber(){
+    return (Math.random())
+}
 /*
 21
 Write a function called randomBetweenNumbers
@@ -430,7 +503,11 @@ Ex: randomBetweenNumbers(3,100)
 => 23
 
 */
-
+console.log(randomBetweenNumbers(1,8))
+console.log(randomBetweenNumbers(3,100))
+function randomBetweenNumbers(x,y){
+    return (Math.random()*(y-x)+1)
+}
 
 /*
 22
@@ -452,7 +529,26 @@ Ex: scoreInUniversty(3)
 Ex: scoreInUniversty(71)
 => "C"
 */
-
+console.log(scoreInUniversty(96))
+console.log(scoreInUniversty(60))
+console.log(scoreInUniversty(10))
+function scoreInUniversty(x){
+    if(x<=100 && x>=95){
+        return 'A'
+    }
+    else if(x<=94 && x>=85){
+        return 'B'
+    }
+    else if(x<=84 && x>=70){
+        return 'C'
+    }
+    else if(x<=69 && x>=50){
+        return 'D'
+    }
+    else if(x<=49 && x>=0){
+        return 'F'
+    }
+}
 
 /*
 23
@@ -471,7 +567,14 @@ Ex: counter()
 => 3
 
 */
-
+let count=0;
+console.log('counter: '+ counter())
+console.log(counter())
+console.log(counter())
+console.log(counter())
+function counter(){
+    return count++
+}
 
 /*
 24
@@ -504,3 +607,15 @@ Ex: resetCounter()
 Ex: counter()
 => 1
 */
+console.log(resetCounter())
+console.log(counter())
+console.log(counter())
+console.log(counter())
+console.log(resetCounter())
+console.log(counter())
+console.log(counter())
+function resetCounter(){
+    let c=count-1
+    count=0
+    return ( c +' and the counter reset now')
+}
