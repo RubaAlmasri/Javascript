@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise #1</title>
+</head>
+<body>
+    <div onmouseover="over()" onmouseout="out()" id="div1"
+    style="background-color: yellow; text-align: center;width: 200px;height: 30px;border: 1px solid ;font-size: 20px;padding-top: 5px;"><b>Hello World!</b></div>
+    <script>
+        function over(){
+            document.getElementById('div1').innerHTML=('Can I help you?')
+        }
+        function out(){
+            document.getElementById('div1').innerHTML=('Hello World!')
+        }
+    </script>
+</body>
+</html>

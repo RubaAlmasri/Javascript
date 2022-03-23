@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise #3 : Changing images</title>
+</head>
+<body>
+    <select id="sel" onchange="fun()">
+        <option value="Select">Select</option>
+        <option value="Jordan">Jordan</option>
+        <option value="KSA">KSA</option>
+        <option value="UAE">UAE</option>
+        <option value="Egypt">Egypt</option>
+        <option value="Tunisia">Tunisia</option>
+    </select><br/>
+    <img id="img1" src="img/pic.PNG" style="width: 200px; height: 150px;">
+    <script>
+        function fun(){
+            let x=document.getElementById('sel').value;
+            if(x=='Select'){
+                document.getElementById('img1').setAttribute('src','img/pic.PNG')
+                document.getElementById('img1').setAttribute('alt','Select')
+            }
+            else if(x=='Jordan'){
+                document.getElementById('img1').setAttribute('src','img/j.svg')
+                document.getElementById('img1').setAttribute('alt','Jordan')
+            }
+            else if(x=='KSA'){
+                document.getElementById('img1').setAttribute('src','img/ksa.webp')
+                document.getElementById('img1').setAttribute('alt','KSA')
+            }
+            else if(x=='UAE'){
+                document.getElementById('img1').setAttribute('src','img/uae.webp')
+                document.getElementById('img1').setAttribute('alt','UAE')
+            }
+            else if(x=='Egypt'){
+                document.getElementById('img1').setAttribute('src','img/e.png')
+                document.getElementById('img1').setAttribute('alt','Egypt')
+            }
+            else if(x=='Tunisia'){
+                document.getElementById('img1').setAttribute('src','img/t.png')
+                document.getElementById('img1').setAttribute('alt','Tunisia')
+            }
+        }
+    </script>
+</body>
+</html>
