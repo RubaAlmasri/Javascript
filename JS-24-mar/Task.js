@@ -177,20 +177,22 @@ Ex: repeatWord("My name is alex mercer class name B baba mama hello Hello HELLO"
 console.log(repeatWord("My name is alex mercer class name B baba mama hello Hello HELLO"))
 function repeatWord(str){
   let arr=str.split(' ')
-  let obj =new Object()
+  let obj1 =new Object()
+  let count=0
   for(let i=0; i<arr.length; i++){
     arr[i]=arr[i].toLowerCase()
   }
   for(let i=0; i<arr.length; i++){
-    let count=0;
+    count=0;
     for(let j=0; j<arr.length; j++){
       if(arr[i]===arr[j]){
         count++;
       }
     }
-
+    let a=arr[i]
+    obj1[a]=count
   }
-  return arr
+  return obj1
 }
 
 
@@ -208,7 +210,7 @@ Ex: repeatChar("mamababatetacedo")
 console.log(repeatChar("mamababatetacedo"))
 function repeatChar(s){
   let count=0;
-  let obj=new Object()
+  let obj2=new Object()
   let str=s.split('')
   let leng=str.length;
   for(let i=0; i<leng; i++){
@@ -216,13 +218,12 @@ function repeatChar(s){
     for(let j=0; j<leng; j++){
       if(str[i]===str[j]){
         count++
-        str.splice(j,1)
-        j--
       }
     }
-    obj.str[i]=count
+    let a=str[i]
+    obj2[a]=count
   }
-  return obj
+  return obj2
 }
 
 /*
@@ -234,17 +235,17 @@ and return an object have the key that inside the array
 Ex: selectFromObject({a: 1, cat: 3}, ['a', 'cat', 'd'])
 =>  {a: 1, cat: 3}
 */
-console.log('Object: '+selectFromObject({a: 1, cat: 3}, ['a', 'cat', 'd']))
+console.log(selectFromObject({a: 1, cat: 3}, ['a', 'cat', 'd']))
 function selectFromObject(o,a){
-  let obj=new Object()
+  let obj3=new Object()
   for(let i in o){
     for(let j=0; j<a.length;j++){
       if(i==a[j]){
-        obj.i==o.i
+        obj3[i]=o[i]
       }
     }
   }
-  return obj
+  return obj3
 }
 
 
