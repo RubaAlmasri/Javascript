@@ -10,22 +10,22 @@ Ex: subtract(2); => 2 - 1 - 0 => 1
 Ex: subtract(5); => 5 - 4 - 3 - 2 - 1 - 0 => -5
 Ex: subtract(9); => 9 - 8 - 7 - 6 - 5 - 4 - 3 - 2 - 1 - 0 => -27
 */
-console.log('sub: '+ subtract(9))
-console.log('sub: '+ subtract(2))
-console.log('sub: '+ subtract(-5))
-function subtract(n){
-    let sub=n ;
-    if(n>=0){
-        let i = n-1 ;
-        while(i>=0){
-            sub-=i
+console.log('sub: ' + subtract(9))
+console.log('sub: ' + subtract(2))
+console.log('sub: ' + subtract(-5))
+function subtract(n) {
+    let sub = n;
+    if (n >= 0) {
+        let i = n - 1;
+        while (i >= 0) {
+            sub -= i
             i--
         }
     }
-    else{
-        let i = n+1 ;
-        while(i<0){
-            sub-=i
+    else {
+        let i = n + 1;
+        while (i < 0) {
+            sub -= i
             i++
         }
     }
@@ -40,24 +40,24 @@ and return the product of all integers up to n starting from 1
 Ex: factorial(2); => 2 * 1 => 2
 Ex: factorial(4); => 4 * 3 * 2 * 1 => 24
 */
-console.log('factorial: '+ factorial(2))
-console.log('factorial: '+ factorial(0))
-console.log('factorial: '+ factorial(1))
-console.log('factorial: '+ factorial(-9))
-function factorial(n){
-    let i=1;
-    let product=1;
-    if(n>=0){
-        while(i<=n){
-            product*=i
+console.log('factorial: ' + factorial(2))
+console.log('factorial: ' + factorial(0))
+console.log('factorial: ' + factorial(1))
+console.log('factorial: ' + factorial(-9))
+function factorial(n) {
+    let i = 1;
+    let product = 1;
+    if (n >= 0) {
+        while (i <= n) {
+            product *= i
             i++
         }
         return product
     }
-    else{
+    else {
         return ('wrong value!!!')
     }
-    
+
 }
 
 /*
@@ -71,15 +71,15 @@ Important: the continue condition should be [somthing !== 0]
 Ex: repeatStr("to",2); => "to to"
 Ex: repeatStr("to",4); => "to to to to"
 */
-console.log(repeatStr("to",2))
-console.log(repeatStr("to",4))
-function repeatStr(s,n){
+console.log(repeatStr("to", 2))
+console.log(repeatStr("to", 4))
+function repeatStr(s, n) {
     let i = 0;
-    let str=''
-    while(i<n){
-        str=str+s
-        if(i!=n-1){
-            str=str+' '
+    let str = ''
+    while (i < n) {
+        str = str + s
+        if (i != n - 1) {
+            str = str + ' '
         }
         i++
     }
@@ -94,23 +94,23 @@ and will return the sumation from the first number to the second number
 Ex: sum2(4, 5); => 4 + 5 => 9
 Ex: sum2(3, 6); => 3 + 4 + 5 + 6 => 18
 */
-console.log('sum: '+ sum2(4,5))
-console.log('sum: '+ sum2(6,3))
-console.log('sum: '+ sum2(9,9))
-console.log('sum: '+ sum2(-9,9))
-console.log('sum: '+ sum2(9,-9))
-function sum2(x,y){
-    let i = x ;
-    let sum=0;
-    if(x<=y){
-        while(i<=y){
-            sum+=i
+console.log('sum: ' + sum2(4, 5))
+console.log('sum: ' + sum2(6, 3))
+console.log('sum: ' + sum2(9, 9))
+console.log('sum: ' + sum2(-9, 9))
+console.log('sum: ' + sum2(9, -9))
+function sum2(x, y) {
+    let i = x;
+    let sum = 0;
+    if (x <= y) {
+        while (i <= y) {
+            sum += i
             i++
         }
     }
-    else{
-        while(i>=y){
-            sum+=i
+    else {
+        while (i >= y) {
+            sum += i
             i--
         }
     }
@@ -128,16 +128,16 @@ and return the first string number time
 Ex: repeatStr2("ro","cc"); => "ro ro"
 Ex: repeatStr2("ro","fff"); => "ro ro ro"
 */
-console.log(repeatStr2("ro","cc"))
-console.log(repeatStr2("ro","ffff"))
-function repeatStr2(s1,s2){
-    let leng=s2.length
-    let i=0
-    let str=''
-    while(i<leng){
-        str=str+s1
-        if(i!=leng-1){
-            str=str+' '
+console.log(repeatStr2("ro", "cc"))
+console.log(repeatStr2("ro", "ffff"))
+function repeatStr2(s1, s2) {
+    let leng = s2.length
+    let i = 0
+    let str = ''
+    while (i < leng) {
+        str = str + s1
+        if (i != leng - 1) {
+            str = str + ' '
         }
         i++
     }
@@ -154,28 +154,28 @@ Ex: multiOf(4,10,3); => 4000
 Ex: multiOf(6,3,2); => 54
 Ex: multiOf(6,2,3); => 48
 */
-console.log('result= '+multiOf(4,10,3))
-console.log('result= '+multiOf(6,-3,3))
-console.log('result= '+multiOf(6,2,-3))
-function multiOf(x,y,z){
-    let result=x;
-    let i = 0 ;
-    let pro=1;
-    if(z>0){
-        while(i<z){
-            pro*=y
+console.log('result= ' + multiOf(4, 10, 3))
+console.log('result= ' + multiOf(6, -3, 3))
+console.log('result= ' + multiOf(6, 2, -3))
+function multiOf(x, y, z) {
+    let result = x;
+    let i = 0;
+    let pro = 1;
+    if (z > 0) {
+        while (i < z) {
+            pro *= y
             i++
         }
-        return (result*pro)
+        return (result * pro)
     }
-    else{
-        while(i>z){
-            pro*=y
+    else {
+        while (i > z) {
+            pro *= y
             i--
         }
-        return (result/pro)
+        return (result / pro)
     }
-    
+
 }
 /*
 7
@@ -186,23 +186,23 @@ from the first number to the second number
 Ex: muti2(4, 5); => 4 * 5 => 20
 Ex: muti2(3, 6); => 3 * 4 * 5 * 6 => 360
 */
-console.log('multi= '+muti2(4, 5))
-console.log('multi= '+muti2(6,3))
-console.log('multi= '+muti2(-1,-3))
-console.log('multi= '+muti2(-6,-1))
-function muti2(n,m){
+console.log('multi= ' + muti2(4, 5))
+console.log('multi= ' + muti2(6, 3))
+console.log('multi= ' + muti2(-1, -3))
+console.log('multi= ' + muti2(-6, -1))
+function muti2(n, m) {
     let i = n;
-    let multi=1;
-    if(n<=m){
-        while(i<=m){
-            multi*=i
+    let multi = 1;
+    if (n <= m) {
+        while (i <= m) {
+            multi *= i
             i++
         }
         return multi
     }
-    else{
-        while(i>=m){
-            multi*=i
+    else {
+        while (i >= m) {
+            multi *= i
             i--
         }
         return multi
@@ -219,29 +219,29 @@ and return the number between them
 numberBetweenUs(2,8) => "3, 4, 5, 6, 7"
 numberBetweenUs(1,3) => "2"
 */
-console.log(numberBetweenUs(2,8))
-console.log(numberBetweenUs(-3,3))
-console.log(numberBetweenUs(3,-3))
-console.log(numberBetweenUs(5,1))
-function numberBetweenUs(a,b){
-    let str=''
-    if(a<b){
-        let i = a+1;
-        while(i<b){
-            str=str+i
-            if(i<b-1){
-                str=str+', '
+console.log(numberBetweenUs(2, 8))
+console.log(numberBetweenUs(-3, 3))
+console.log(numberBetweenUs(3, -3))
+console.log(numberBetweenUs(5, 1))
+function numberBetweenUs(a, b) {
+    let str = ''
+    if (a < b) {
+        let i = a + 1;
+        while (i < b) {
+            str = str + i
+            if (i < b - 1) {
+                str = str + ', '
             }
             i++
         }
         return str
     }
-    else{
-        let i = a-1;
-        while(i>b){
-            str=str+i
-            if(i>b+1){
-                str=str+', '
+    else {
+        let i = a - 1;
+        while (i > b) {
+            str = str + i
+            if (i > b + 1) {
+                str = str + ', '
             }
             i--
         }
@@ -270,24 +270,24 @@ console.log(countDown(5))
 console.log(countDown(7))
 console.log(countDown(-7))
 console.log(countDown(0))
-function countDown(num){
-    let i = num ;
-    let str='';
-    if(num>0){
-        while(i>0){
-            str= str + num +', '
+function countDown(num) {
+    let i = num;
+    let str = '';
+    if (num > 0) {
+        while (i > 0) {
+            str = str + num + ', '
             num--
             i--
         }
     }
-    else{
-        while(i<0){
-            str=str + num+', '
+    else {
+        while (i < 0) {
+            str = str + num + ', '
             num++
             i++
         }
     }
-    return str+'done'
+    return str + 'done'
 }
 
 
@@ -301,24 +301,24 @@ multiplication2(5,4) => 20
 multiplication2(2,8) => 16
 multiplication2(7,6) =>  42
 */
-console.log('multi: '+ multiplication2(5,4))
-console.log('multi: '+ multiplication2(-5,-5))
-console.log('multi: '+ multiplication2(5,-20))
-function multiplication2(x,y){
+console.log('multi: ' + multiplication2(5, 4))
+console.log('multi: ' + multiplication2(-5, -5))
+console.log('multi: ' + multiplication2(5, -20))
+function multiplication2(x, y) {
     let i = 0;
-    let sum=0;
-    if(y>0){
-        while(i<y){
-            sum+=x
+    let sum = 0;
+    if (y > 0) {
+        while (i < y) {
+            sum += x
             i++
         }
     }
-    else{
-        while(i>y){
-            sum+=x
+    else {
+        while (i > y) {
+            sum += x
             i--
         }
-        sum*=-1
+        sum *= -1
     }
     return sum
 }
@@ -333,24 +333,24 @@ mod2(2,8) => 2
 mod2(7,4) => 3
 mod2(8,4) => 0
 */
-console.log(mod2(5,4))
-console.log(mod2(2,8))
-console.log(mod2(8,4))
-console.log(mod2(-2,8))
-function mod2(n1,n2){ 
-    let div=(n1/n2);
-    if((div>0 && div<1) || (div>-1 && div<0)){
-      return n1
+console.log(mod2(5, 4))
+console.log(mod2(2, 8))
+console.log(mod2(8, 4))
+console.log(mod2(-2, 8))
+function mod2(n1, n2) {
+    let div = (n1 / n2);
+    if ((div > 0 && div < 1) || (div > -1 && div < 0)) {
+        return n1
     }
-    else if(Number.isInteger(div)){
-      return 0
+    else if (Number.isInteger(div)) {
+        return 0
     }
-    else if(n1>n2||div>1||div<-1){
-      let i = n1
-      while(i>n2){
-        i=i-n2
-      }
-      return i
+    else if (n1 > n2 || div > 1 || div < -1) {
+        let i = n1
+        while (i > n2) {
+            i = i - n2
+        }
+        return i
     }
 }
 
@@ -368,17 +368,17 @@ repeatChar("school","a") => 0
 repeatChar("School","s") => 1
 try more case by yourself
 */
-console.log(repeatChar("schOol","o"))
-console.log(repeatChar("school","L"))
-console.log(repeatChar("School","s"))
-console.log(repeatChar("School","r"))
-function repeatChar(s1,s2){
+console.log(repeatChar("schOol", "o"))
+console.log(repeatChar("school", "L"))
+console.log(repeatChar("School", "s"))
+console.log(repeatChar("School", "r"))
+function repeatChar(s1, s2) {
 
-    let i=0
-    let count =0 
-    while(i<s1.length){
-        if(s1[i]===s2 || s1[i]=== s2.toUpperCase() || s1[i]=== s2.toLowerCase()){
-            count+=1;
+    let i = 0
+    let count = 0
+    while (i < s1.length) {
+        if (s1[i] === s2 || s1[i] === s2.toUpperCase() || s1[i] === s2.toLowerCase()) {
+            count += 1;
         }
         i++
     }
@@ -387,7 +387,7 @@ function repeatChar(s1,s2){
 
 
 
-
+console.log(' ***Advanced Part*** ')
 
 // Advanced Part 
 /*
@@ -404,7 +404,23 @@ fibon(n): 1 1 2 3 5 8 13 21
           | | | | | |  |  |
 n:        0 1 2 3 4 5  6  7
 */
+console.log(fibon(7))
+function fibon(num) {
+    let result = 0;
+    if (num == 0 || num == 1) {
+        return 1
+    }
+    else {
+        let str=[]
+        str[0]=1
+        str[1]=1
+        for (let i = 2; i <=num; i++) {
+            str[i]=str[i-1]+str[i-2]
+        }
+        return str[num]
+    }
 
+}
 
 /*
 2
@@ -418,7 +434,17 @@ mirror("school") => "loohcs"
 mirror("car") => "rac"
 mirror("maDrasa") => "asarDam"
 */
-
+console.log('mirror: ' + mirror("school"))
+console.log('mirror: ' + mirror("car"))
+console.log('mirror: ' + mirror("maDrasa"))
+function mirror(s) {
+    let x = s.length
+    let str = ''
+    for (let i = x - 1; i >= 0; i--) {
+        str = str + s[i];
+    }
+    return str
+}
 
 
 /*
@@ -434,7 +460,21 @@ mirrorCaseAlso("sChOol") => "LOoHcS"
 mirrorCaseAlso("THOR") => "roht"
 mirrorCaseAlso("BaBa") => "AbAb"
 */
-
+// console.log(mirrorCaseAlso("sChOol"))
+// console.log(mirrorCaseAlso("THOR"))
+// function mirrorCaseAlso(str){
+//     let x = str.length
+//     let s = ''
+//     for (let i = x - 1; i >= 0; i--) {
+//         if(str[i]===(str[i].toUpperCase)){
+//             s=s+(str[i].toLowerCase);
+//         }
+//         else{
+//             s = s + (str[i].toUpperCase);
+//         }
+//     }
+//     return s
+// }
 
 
 /*
