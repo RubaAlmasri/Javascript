@@ -103,22 +103,25 @@ and return the full name of the person have longest full name
 Ex: longestName(persons) => "Soso Al-Amora"
 */
 console.log(longestName(persons))
+// console.log(persons[0])
 function longestName(x){
   let arr=[]
-  let str=''
   let maxindex=0
   let len=0
   for(let i=0; i<x.length; i++){
     arr[i]=x[i].name
   }
-  let maxleng=arr[0].first.length +  arr[0].last.length + 1
+//   console.log(arr)
+  let maxleng=arr[0].first.length +  arr[0].last.length 
+
   for(let x=1;x<arr.length;x++){
-    len=arr[x].first.length +  arr[x].last.length + 1 ;
+    len=arr[x].first.length +  arr[x].last.length  ;
     if(len>maxleng){
-      maxindex=x
+      maxindex = x
+      maxleng=len
     }
   }
-  str='Longest full name: ' + x[maxindex].name.first + ' ' + x[maxindex].name.last
+  let str='Longest full name: ' + arr[maxindex].first + ' ' + arr[maxindex].last
   return str 
 }
 
@@ -132,25 +135,27 @@ and return the full name of the person have longest full name
 Ex: longestName(persons) => "Soso Al-Amora"
 */
 console.log(longestName(persons))
+// console.log(persons[0])
 function longestName(x){
   let arr=[]
-  let str=''
   let maxindex=0
   let len=0
   for(let i=0; i<x.length; i++){
     arr[i]=x[i].name
   }
-  let maxleng=arr[0].first.length +  arr[0].last.length + 1
+//   console.log(arr)
+  let maxleng=arr[0].first.length +  arr[0].last.length 
+
   for(let x=1;x<arr.length;x++){
-    len=arr[x].first.length +  arr[x].last.length + 1 ;
+    len=arr[x].first.length +  arr[x].last.length  ;
     if(len>maxleng){
-      maxindex=x
+      maxindex = x
+      maxleng=len
     }
   }
-  str='Longest full name: ' + x[maxindex].name.first + ' ' + x[maxindex].name.last
+  let str='Longest full name: ' + arr[maxindex].first + ' ' + arr[maxindex].last
   return str 
 }
-
 
 /*
 7
