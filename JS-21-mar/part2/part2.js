@@ -406,7 +406,6 @@ n:        0 1 2 3 4 5  6  7
 */
 console.log(fibon(7))
 function fibon(num) {
-    let result = 0;
     if (num == 0 || num == 1) {
         return 1
     }
@@ -419,7 +418,6 @@ function fibon(num) {
         }
         return str[num]
     }
-
 }
 
 /*
@@ -435,8 +433,8 @@ mirror("car") => "rac"
 mirror("maDrasa") => "asarDam"
 */
 console.log('mirror: ' + mirror("school"))
-console.log('mirror: ' + mirror("car"))
-console.log('mirror: ' + mirror("maDrasa"))
+console.log(mirror("car"))
+console.log(mirror("maDrasa"))
 function mirror(s) {
     let x = s.length
     let str = ''
@@ -460,21 +458,24 @@ mirrorCaseAlso("sChOol") => "LOoHcS"
 mirrorCaseAlso("THOR") => "roht"
 mirrorCaseAlso("BaBa") => "AbAb"
 */
-// console.log(mirrorCaseAlso("sChOol"))
-// console.log(mirrorCaseAlso("THOR"))
-// function mirrorCaseAlso(str){
-//     let x = str.length
-//     let s = ''
-//     for (let i = x - 1; i >= 0; i--) {
-//         if(str[i]===(str[i].toUpperCase)){
-//             s=s+(str[i].toLowerCase);
-//         }
-//         else{
-//             s = s + (str[i].toUpperCase);
-//         }
-//     }
-//     return s
-// }
+console.log('MirrorCase: '+mirrorCaseAlso("sChOol"))
+console.log(mirrorCaseAlso("THOR"))
+console.log(mirrorCaseAlso("BaBa"))
+function mirrorCaseAlso(str){
+    let x = str.length
+    let s = ''
+    let temp=''
+    for (let i = x - 1; i >= 0; i--) {
+        temp=str[i]
+        if(temp===(temp.toUpperCase())){
+            s=s+(temp.toLowerCase());
+        }
+        else{
+            s = s + (temp.toUpperCase());
+        }
+    }
+    return s
+}
 
 
 /*
@@ -492,7 +493,18 @@ repeatChar2("school","a") => 0
 repeatChar2("School","S") => 1
 try more case by yourself
 */
-
+console.log(repeatChar2("schOol","o"))
+console.log(repeatChar2("schOol","a"))
+console.log(repeatChar2("schOol","s"))
+function repeatChar2(str,char){
+    let count=0
+    for(let i=0; i<str.length; i++){
+        if(str[i]==char){
+            count++
+        }
+    }
+    return count
+}
 
 /*
 5
@@ -515,3 +527,24 @@ hi 5 Now Pleas Say Hello To 1, 2, 3 and 4
 hi 6 Now Pleas Say Hello To 1, 2, 3, 4 and 5
 hi 7 Now Pleas Say Hello To 1, 2, 3, 4, 5 and 6
 */
+(HiSayHelloTo(7))
+function HiSayHelloTo(num){
+    let str='hi '
+    for(let i=1; i<=num; i++){
+        str=str + i
+        if(i>1){
+            str=str +' Now Please Say Hello To ' 
+            for(let j=1; j<i; j++){
+                str=str +  j
+                if(j==i-2){
+                    str= str+' and '
+                }
+                else if(j!=i-1){
+                    str=str+', '
+                }
+            }
+        }
+        console.log(str)
+        str='hi '
+    }
+}
