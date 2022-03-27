@@ -5,18 +5,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .container{
+   width: 400px;
+   height: 250px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   gap: 10px;
+   border: 1px solid black;
+}
+#display_image{
+   width: 300px;
+   height: 200px;
+   border: 1px solid black;
+   background-position: center;
+   background-size: cover;
+}
+    </style>
 </head>
 <body>
-    <input type="file" id="in" onchange="f1(this)">
+    <!-- <input type="file" id="in" accept="image/*" onchange="f1(this)">
     <div><img src="" alt="img" id="image"></div>
 
     <script>
+
+        const inp=document.getElementById('in')
+        console.log(inp)
+        function f1(e){
+            localStorage.setItem('images',reader.result)
+        }
+
         // function f1(){
         // let reader=new FileReader()
         // console.log(reader.result)
         // reader.readAsDataURL(this.files[0])
         // localStorage.setItem('images',reader.result)
         // document.getElementById('image').setAttribute('src',localStorage.getItem('images'))}
-    </script>
+    </script> -->
+    <div class="container">
+        <input type="file" id="image_input" accept="image/png, image/jpg">
+       <div id="display_image"><img alt="" id="i" width="200px" height="200px"></div>
+     </div>
+
+
+    <script>
+  const image_input = document.querySelector("#image_input");
+image_input.addEventListener("change", function() {
+   const reader = new FileReader();
+   reader.addEventListener("load", () => {
+     const uploaded_image = reader.result;
+    //  console.log(uploaded_image)
+     localStorage.setItem('img',uploaded_image)
+     const m=localStorage.getItem('img')
+    //  console.log(m)
+     document.querySelector("#i").setAttribute ('src',m);
+});
+   reader.readAsDataURL(this.files[0]);
+});
+</script>
 </body>
 </html>

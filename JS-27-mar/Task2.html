@@ -22,7 +22,7 @@
     <textarea id="tech" cols="30" rows="10"></textarea>
     <br /><br />
     <label for="img">Image related to the topic: </label>
-    <input type="file" id="img">
+    <input type="file" id="img1">
     <br /><br />
     <button id="btn" onclick="saveform()">Submit</button>
     <br /><br />
@@ -40,6 +40,7 @@
     </div><br /><br />
     <div id="div5"
         style="width: 400px; height: 400px; border: 1px solid; border-radius: 10px; text-align: center; display: none;margin-left: 110px;">
+        <img alt="" id="i" width="200px" height="200px">
     </div>
 
     <script>
@@ -61,8 +62,22 @@
             sessionStorage.setItem('tech-used', document.getElementById('tech').value)
             document.getElementById('div4').innerHTML = 'Technology used: ' + sessionStorage.getItem('tech-used')
 
-            sessionStorage.setItem('Image', document.getElementById('img').value)
-            document.getElementById('div5').innerHTML = sessionStorage.getItem('Image')
+            // sessionStorage.setItem('Image', document.getElementById('img').value)
+            // document.getElementById('div5').innerHTML = sessionStorage.getItem('Image')
+            // const image_input = document.querySelector("#img1");
+            // console.log(image_input)
+            // image_input.addEventListener("change", function () {
+            //     const reader = new FileReader();
+            //     reader.addEventListener("load", () => {
+            //         const uploaded_image = reader.result;
+            //         //  console.log(uploaded_image)
+            //         sessionStorage.setItem('img', uploaded_image)
+            //         const m = sessionStorage.getItem('img')
+            //         //  console.log(m)
+            //         document.querySelector("#i").setAttribute('src', m);
+            //     });
+            //     reader.readAsDataURL(this.files[0]);
+            // });
         }
     </script>
 </body>
