@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise #1</title>
+</head>
+
+<body>
+    <label for="name">Name: </label>
+    <input type="text" id="name">
+    <br /><br />
+    <label for="age">Age: </label>
+    <input type="text" id="age">
+    <br /><br />
+    <label for="bdate">Birth Date: </label>
+    <input type="date" id="bdate">
+    <br /><br />
+    <label for="gender">Gender: </label>
+    <input type="radio" value="male" name="gen" id="male">Male
+    <input type="radio" value="female" name="gen" id="female">Female
+    <br /><br />
+    <label for="major">Major and university: </label>
+    <input type="text" id="major">
+    <br /><br />
+    <label for="prog1">Programming Language: </label>
+    <input type="checkbox" id="prog1" value="java">Java
+    <input type="checkbox" id="prog2" value="python">Python
+    <input type="checkbox" id="prog3" value="c++">C++
+    <br /><br />
+    <label for="img">Image: </label>
+    <input type="file" id="img">
+    <br /><br />
+    <label for="description">Brief Description: </label><br />
+    <textarea id="description" cols="30" rows="10"></textarea>
+    <br /><br />
+    <label for="sibling">Siblings with a brief description of them: </label><br />
+    <textarea id="sibling" cols="30" rows="10"></textarea>
+    <br /><br />
+    <button id="btn1" onclick="form1()">Submit</button>
+    <br /><br />
+
+
+    <div id="div1"
+        style="width: 300px; height: 300px; border: 1px solid; border-radius: 10px; text-align: center; display: none;">
+        <img src="" alt="image" id="image" style="width: 60px; height: 60px; border-radius: 100%;">
+    </div>
+    <div id="div2"
+        style="width: 300px; height: 300px; border: 1px solid; border-radius: 10px; text-align: center; display: none;">
+    </div>
+    <div id="div3"
+        style="width: 300px; height: 300px; border: 1px solid; border-radius: 10px; text-align: center; display: none;">
+    </div><br /><br />
+    <div id="div4"
+        style="width: 200px; height: 200px; border: 1px solid; border-radius: 10px; text-align: center; display: none;">
+    </div>
+    <div id="div5"
+        style="width: 200px; height: 200px; border: 1px solid; border-radius: 10px; text-align: center; display: none;">
+    </div>
+
+    <script>
+        // localStorage.clear()
+        function form1() {
+            document.getElementById('div1').style.display = 'inline-block'
+            document.getElementById('div2').style.display = 'inline-block'
+            document.getElementById('div3').style.display = 'inline-block'
+            document.getElementById('div4').style.display = 'inline-block'
+            document.getElementById('div5').style.display = 'inline-block'
+            localStorage.setItem('Name', document.getElementById('name').value)
+            localStorage.setItem('Age',document.getElementById('age').value)
+            localStorage.setItem('Bdate',document.getElementById('bdate').value)
+
+
+            let reader=new FileReader()
+        console.log(reader.result)
+        // reader.readAsDataURL(this.files[0])
+        localStorage.setItem('images',reader.result)
+            // localStorage.setItem('Img', document.getElementById('img').value)
+
+            let g1 = document.getElementById('male')
+            let g2 = document.getElementById('female')
+            if (g1.checked === true) {
+                localStorage.setItem('Gender', document.getElementById('male').value)
+            }
+            if (g2.checked === true) {
+                localStorage.setItem('Gender', document.getElementById('female').value)
+            }
+            localStorage.setItem('Gender', document.getElementsByName('gen').value)
+            document.getElementById('image').setAttribute('src', localStorage.getItem('Img'))
+            document.getElementById('div1').innerHTML = 'Name: ' + localStorage.getItem('Name') + '<br/>' + 'Gender: ' + localStorage.getItem('Gender')+'<br/>'+ 'Age: '+localStorage.getItem('Age')+'( '+localStorage.getItem('Bdate')+' )'
+
+            localStorage.setItem('Description', document.getElementById('description').value)
+            document.getElementById('div2').innerHTML = 'Brief Description: ' + localStorage.getItem('Description')
+
+            localStorage.setItem('Sibling', document.getElementById('sibling').value)
+            document.getElementById('div3').innerHTML = 'Siblings: ' + localStorage.getItem('Sibling')
+
+            localStorage.setItem('Major&uni', document.getElementById('major').value)
+            document.getElementById('div4').innerHTML = 'Major and university: ' + localStorage.getItem('Major&uni')
+
+            let l1 = document.getElementById('prog1')
+            let l2 = document.getElementById('prog2')
+            let l3 = document.getElementById('prog3')
+            if (l1.checked == true) {
+                localStorage.setItem('lang1', document.getElementById('prog1').value)
+            }
+            else if (l1.checked == false) {
+                localStorage.setItem('lang1', ' ')
+            }
+            if (l2.checked == true) {
+                localStorage.setItem('lang2', document.getElementById('prog2').value)
+            }
+            else if (l2.checked == false) {
+                localStorage.setItem('lang2', ' ')
+            }
+            if (l3.checked == true) {
+                localStorage.setItem('lang3', document.getElementById('prog3').value)
+            }
+            else if (l3.checked == false) {
+                localStorage.setItem('lang3', ' ')
+            }
+            document.getElementById('div5').innerHTML = 'Programming Language: ' + localStorage.getItem('lang1') + ', ' + localStorage.getItem('lang2') + ', ' + localStorage.getItem('lang3')
+        }
+    </script>
+</body>
+
+</html>

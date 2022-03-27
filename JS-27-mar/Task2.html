@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise #2</title>
+</head>
+
+<body>
+    <label for="sub">Subject: </label>
+    <input type="text" id="sub">
+    <br /><br />
+    <label for="desc">Description: </label><br />
+    <textarea id="desc" cols="30" rows="10"></textarea>
+    <br /><br />
+    <label for="utypes">User Types: </label>
+    <input type="text" id="utypes">
+    <br /><br />
+    <label for="tech">Technology used: </label><br />
+    <textarea id="tech" cols="30" rows="10"></textarea>
+    <br /><br />
+    <label for="img">Image related to the topic: </label>
+    <input type="file" id="img">
+    <br /><br />
+    <button id="btn" onclick="saveform()">Submit</button>
+    <br /><br />
+    <div id="div1"
+        style="width: 200px; height: 200px; border: 1px solid; border-radius: 10px; text-align: center; display: none;margin-left: 60px;">
+    </div>
+    <div id="div2"
+        style="width: 200px; height: 200px; border: 1px solid; border-radius: 10px; text-align: center; display: none;margin-left: 100px;">
+    </div><br /><br />
+    <div id="div3"
+        style="width: 200px; height: 200px; border: 1px solid; border-radius: 10px; text-align: center; display: none;margin-left: 60px;">
+    </div>
+    <div id="div4"
+        style="width: 200px; height: 200px; border: 1px solid; border-radius: 10px; text-align: center; display: none;margin-left: 100px;">
+    </div><br /><br />
+    <div id="div5"
+        style="width: 400px; height: 400px; border: 1px solid; border-radius: 10px; text-align: center; display: none;margin-left: 110px;">
+    </div>
+
+    <script>
+        function saveform() {
+            document.getElementById('div1').style.display = 'inline-block'
+            document.getElementById('div2').style.display = 'inline-block'
+            document.getElementById('div3').style.display = 'inline-block'
+            document.getElementById('div4').style.display = 'inline-block'
+            document.getElementById('div5').style.display = 'inline-block'
+            sessionStorage.setItem('subject', document.getElementById('sub').value)
+            document.getElementById('div1').innerHTML = 'Subject: ' + sessionStorage.getItem('subject')
+
+            sessionStorage.setItem('Description', document.getElementById('desc').value)
+            document.getElementById('div2').innerHTML = 'Description: ' + sessionStorage.getItem('Description')
+
+            sessionStorage.setItem('Utype', document.getElementById('utypes').value)
+            document.getElementById('div3').innerHTML = 'User Types: ' + sessionStorage.getItem('Utype')
+
+            sessionStorage.setItem('tech-used', document.getElementById('tech').value)
+            document.getElementById('div4').innerHTML = 'Technology used: ' + sessionStorage.getItem('tech-used')
+
+            sessionStorage.setItem('Image', document.getElementById('img').value)
+            document.getElementById('div5').innerHTML = sessionStorage.getItem('Image')
+        }
+    </script>
+</body>
+
+</html>
