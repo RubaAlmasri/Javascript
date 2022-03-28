@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <button id="btn">Laod Data</button>
+    <!-- <div id="info"></div> -->
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Color</th>
+          </tr>
+        </thead>
+        <tbody id="info">
+         
+        </tbody>
+      </table>
+    <script>
+        document.getElementById('btn').addEventListener("click", function(){
+            let x=new XMLHttpRequest();
+            x.open('GET', 'data.json');
+            x.onload = function () {
+                let data = JSON.parse(x.responseText);
+                // document.write(data[0].name);
+                // laodinfo(data)
+                var str=''
+            for(let i=0; i<data.length; i++){
+                str+='<tr><td>'+data[i].name+'</td><td>'+data[i].price+'</td><td>'+data[i].color+'</td></tr>';
+            }
+            // info.insertAdjacentHTML('beforeend',str)
+            document.getElementById('info').innerHTML+=str
+            }
+            document.getElementById('btn').disabled=true
+        x.send();
+        });
+    </script>
+  </body>
+</html>
