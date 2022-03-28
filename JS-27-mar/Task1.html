@@ -31,7 +31,7 @@
     <input type="checkbox" id="prog3" value="c++">C++
     <br /><br />
     <label for="img">Image: </label>
-    <input type="file" id="img">
+    <input type="file" id="img1">
     <br /><br />
     <label for="description">Brief Description: </label><br />
     <textarea id="description" cols="30" rows="10"></textarea>
@@ -45,7 +45,7 @@
 
     <div id="div1"
         style="width: 300px; height: 300px; border: 1px solid; border-radius: 10px; text-align: center; display: none;">
-        <img src="" alt="image" id="image" style="width: 60px; height: 60px; border-radius: 100%;">
+        <img src="" alt="image" id="image" width="200px" height="200px">
     </div>
     <div id="div2"
         style="width: 300px; height: 300px; border: 1px solid; border-radius: 10px; text-align: center; display: none;">
@@ -59,6 +59,10 @@
     <div id="div5"
         style="width: 200px; height: 200px; border: 1px solid; border-radius: 10px; text-align: center; display: none;">
     </div>
+    <!-- <div id="div6"
+        style="width: 300px; height: 300px; border: 1px solid; border-radius: 10px; text-align: center; display: none;">
+        <img src="" alt="image" id="image" width="200px" height="200px">
+    </div> -->
 
     <script>
         // localStorage.clear()
@@ -68,6 +72,7 @@
             document.getElementById('div3').style.display = 'inline-block'
             document.getElementById('div4').style.display = 'inline-block'
             document.getElementById('div5').style.display = 'inline-block'
+            document.getElementById('div6').style.display = 'inline-block'
             localStorage.setItem('Name', document.getElementById('name').value)
             localStorage.setItem('Age',document.getElementById('age').value)
             localStorage.setItem('Bdate',document.getElementById('bdate').value)
@@ -88,7 +93,7 @@
                 localStorage.setItem('Gender', document.getElementById('female').value)
             }
             localStorage.setItem('Gender', document.getElementsByName('gen').value)
-            document.getElementById('image').setAttribute('src', localStorage.getItem('Img'))
+            // document.getElementById('image').setAttribute('src', localStorage.getItem('Img'))
             document.getElementById('div1').innerHTML = 'Name: ' + localStorage.getItem('Name') + '<br/>' + 'Gender: ' + localStorage.getItem('Gender')+'<br/>'+ 'Age: '+localStorage.getItem('Age')+'( '+localStorage.getItem('Bdate')+' )'
 
             localStorage.setItem('Description', document.getElementById('description').value)
@@ -123,6 +128,19 @@
             }
             document.getElementById('div5').innerHTML = 'Programming Language: ' + localStorage.getItem('lang1') + ', ' + localStorage.getItem('lang2') + ', ' + localStorage.getItem('lang3')
         }
+        const image_input = document.querySelector("#img1");
+            image_input.addEventListener("change", function () {
+                const reader = new FileReader();
+                reader.addEventListener("load", () => {
+                    const uploaded_image = reader.result;
+                    //  console.log(uploaded_image)
+                    localStorage.setItem('img', uploaded_image)
+                    const im = localStorage.getItem('img')
+                    //  console.log(m)
+                    document.querySelector("#image").setAttribute('src', im);
+                });
+                reader.readAsDataURL(this.files[0]);
+            });
     </script>
 </body>
 

@@ -39,9 +39,8 @@
         style="width: 200px; height: 200px; border: 1px solid; border-radius: 10px; text-align: center; display: none;margin-left: 100px;">
     </div><br /><br />
     <div id="div5"
-        style="width: 400px; height: 400px; border: 1px solid; border-radius: 10px; text-align: center; display: none;margin-left: 110px;">
-        <img alt="" id="i" width="200px" height="200px">
-    </div>
+        style="width: 200px; height: 200px; border: 1px solid; border-radius: 10px;display: none;margin-left: 100px; margin-left: 200px;">
+        <img alt="" id="i" width="150px" height="150px" style="margin: 25px;"></div>
 
     <script>
         function saveform() {
@@ -61,6 +60,21 @@
 
             sessionStorage.setItem('tech-used', document.getElementById('tech').value)
             document.getElementById('div4').innerHTML = 'Technology used: ' + sessionStorage.getItem('tech-used')
+        }
+
+        const image_input = document.querySelector("#img1");
+        image_input.addEventListener("change", function () {
+            const reader = new FileReader();
+            reader.addEventListener("load", () => {
+                const uploaded_image = reader.result;
+                //  console.log(uploaded_image)
+                sessionStorage.setItem('img', uploaded_image)
+                const m = sessionStorage.getItem('img')
+                //  console.log(m)
+                document.querySelector("#i").setAttribute('src', m);
+            });
+            reader.readAsDataURL(this.files[0]);
+        });
 
             // sessionStorage.setItem('Image', document.getElementById('img').value)
             // document.getElementById('div5').innerHTML = sessionStorage.getItem('Image')
@@ -78,7 +92,7 @@
             //     });
             //     reader.readAsDataURL(this.files[0]);
             // });
-        }
+
     </script>
 </body>
 
