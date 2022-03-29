@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+    <div class="container">
+        <select class="form-control" id="info">
+            <option>Please Select</option>
+        </select>
+
+        <p id="show"></p>
+    </div>
+
+
+    <script>
+
+        async function laoddata(){
+            const response = await fetch('https://www.breakingbadapi.com/api/characters');
+            const data = await response.json();
+            console.log(data)
+            for(let i=0; i<data.length; i++){
+                // console.log(data[i])
+                document.getElementById('info').innerHTML+= '<option>' + data[i].name + '</option>'
+            }
+            document.getElementById('info').addEventListener("change", async function(){
+                let n= document.getElementById('info').value;
+                console.log(n);
+                for(let j=0; j<data.length;j++){
+                    if(n== data[j].name){
+                        document.getElementById('show').innerHTML='Nickname: ' + data[j].nickname;
+                    }
+                }
+                
+                
+            })
+        }
+
+        // function showdata(){
+        //     // const response = await fetch('https://www.breakingbadapi.com/api/characters');
+        //     // const data = await response.json();
+
+        //     let n= document.getElementById('info').value
+        //     console.log(n)
+        //     for(let i=0; i<data.length; i++){
+        //         // console.log(data[i])
+        //         document.getElementById('info').innerHTML+= '<option>' + data[i].name + '</option>'
+        //     }
+        // }
+
+
+        laoddata()
+
+    </script>
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
