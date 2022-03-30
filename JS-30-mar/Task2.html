@@ -16,12 +16,13 @@
         <p id="par2" style="display: inline; color: red;"></p><br><br>
         Birth date: <input type="text" id="bdate">
         <p id="par3" style="display: inline; color: red;"></p><br><br>
-        Email: <input type="text" id="mail"><br>
+        Email: <input type="text" id="mail">
         Confirm Email: <input type="text" id="mail1">
         <p id="par4" style="display: inline; color: red;"></p><br><br>
         Password: <input type="password" id="pass">
-        <p id="par5" style="display: inline; color: red;"></p><br><br>
         Confirm Password: <input type="password" id="pass1"><br>
+        <p id="par5" style="display: inline; color: red;"></p>
+        
         <input type="submit">
     </form>
 
@@ -46,7 +47,7 @@
 
             let bd = document.getElementById('bdate').value
             // alert(bd)
-            let pattern2 = /([0-9]{4}([-]|[/])(0[1-9]|1[0-2])([-]|[/])([0-2]{1}[0-9]{1}|3[0-1]{1})|([0-2]{1}[0-9]{1}|3[0-1]{1})([-]|[/])(0[1-9]|1[0-2])([-]|[/])[0-9]{4})/
+            let pattern2 = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/
             if (pattern2.test(bd) == false) {
                 alert('Not valid BDate!!')
             }
